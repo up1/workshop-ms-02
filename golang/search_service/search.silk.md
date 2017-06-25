@@ -20,7 +20,7 @@ Include the `name` text in the body:
 ### Example response
 
 * Status: 200
-* Content-Type: "application/json"
+* Content-Type: "application/json; charset=utf-8"
 
 ```json
 {
