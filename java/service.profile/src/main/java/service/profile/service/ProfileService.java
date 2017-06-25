@@ -19,7 +19,7 @@ public class ProfileService {
     public Profile getProfile(int id) {
         Profile profile = new Profile();
         profile.setId(id);
-        profile.setName("Demo user" + (id + 1));
+        profile.setName("Demo user" + (id));
         profile.setFeeds(getFeelds(id));
 
         return profile;
@@ -37,7 +37,7 @@ public class ProfileService {
             });
 
             Feed feed = new Feed();
-            feed.setId(profileId + 1);
+            feed.setId(i + 1);
             feed.setDescription("feed item " + (i + 1));
             feed.setLike(like);
             feeds.add(feed);

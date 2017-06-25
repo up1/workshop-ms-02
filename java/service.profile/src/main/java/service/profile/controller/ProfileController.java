@@ -1,6 +1,7 @@
-package service.profile;
+package service.profile.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 import service.profile.entity.Profile;
@@ -13,10 +14,8 @@ public class ProfileController{
     @Autowired
     ProfileService profileService;
 
-    @GetMapping("/profile")
-    public Profile getProfile(@RequestParam(value="ID", defaultValue="") String ID){
-
-        if (ID.equals("")) return new Profile();       
+    @GetMapping("/profile/{id}")
+    public Profile getProfile(@PathVariable(value="id") int id){
 
         Profile profile = profileService.getProfile(1);
         return profile;
