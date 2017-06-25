@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Like {
     private int count;
-    private List<String> name;
+    private String[] name;
 
     public int getCount() {
         return count;
@@ -14,11 +14,11 @@ public class Like {
         this.count = count;
     }
 
-    public List<String> getName() {
+    public String[] getName() {
         return name;
     }
 
-    public void setName(List<String> name) {
+    public void setName(String[] name) {
         this.name = name;
     }
 }
