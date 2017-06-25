@@ -45,10 +45,6 @@ func init() {
 }
 
 func main() {
-	feed[0].ID = 1
-	// feed.Data[0].Description = "test"
-	// feed.Data[0].Like.Count = 1
-	// feed.Data[0].Like.Name = []string{"first name", "peach", "pear"}
 	r := gin.Default()
 	r.GET("/feed", func(c *gin.Context) {
 		c.JSON(200, feed)
