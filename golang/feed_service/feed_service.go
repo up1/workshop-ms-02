@@ -1,6 +1,9 @@
 package main
 
-import "gopkg.in/gin-gonic/gin.v1"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/mcuadros/go-gin-prometheus"
+)
 
 type like struct {
 	Count int      `json:"count"`
@@ -45,7 +48,10 @@ func init() {
 }
 
 func main() {
-	r := gin.Default()
+	r := gin.New()
+
+	p := ginprometheus.NewPrometheus("gin")
+	p.Use(r)
 	r.GET("/feed", func(c *gin.Context) {
 		c.JSON(200, feed)
 	})
